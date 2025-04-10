@@ -22,7 +22,8 @@ node {
     }
 
     stage ('Gradle Build') {
-        buildInfo = rtGradle.run rootDir: "./", tasks: 'clean build'
+        // Skip the Artifactory plugin and just use shell command
+        sh "${tool 'gradle'}/bin/gradle clean build"
     }
 
     stage ('Gradle Publish') {
