@@ -22,8 +22,8 @@ node {
     }
 
     stage ('Gradle Build') {
-        // Skip the Artifactory plugin and just use shell command
-        sh "${tool 'gradle'}/bin/gradle clean build"
+        // Run Gradle with --info or --debug to see detailed logs in Jenkins console
+        sh '/var/jenkins_home/tools/hudson.plugins.gradle.GradleInstallation/gradle/bin/gradle clean build --info'
     }
 
     stage ('Gradle Publish') {
