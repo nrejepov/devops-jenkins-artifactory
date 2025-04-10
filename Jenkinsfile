@@ -22,8 +22,8 @@ node {
     }
 
     stage ('Gradle Build') {
-        // Run Gradle with --info or --debug to see detailed logs in Jenkins console
-        sh '/var/jenkins_home/tools/hudson.plugins.gradle.GradleInstallation/gradle/bin/gradle clean build --info'
+        sh '/var/jenkins_home/tools/hudson.plugins.gradle.GradleInstallation/gradle/bin/gradle clean build --no-daemon --info --init-script /dev/null'
+
     }
 
     stage ('Gradle Publish') {
