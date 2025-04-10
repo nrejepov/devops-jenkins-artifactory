@@ -22,8 +22,7 @@ node {
     }
 
     stage ('Gradle Build') {
-        sh '/var/jenkins_home/tools/hudson.plugins.gradle.GradleInstallation/gradle/bin/gradle clean build --no-daemon --info'
-
+        buildInfo = rtGradle.run rootDir: "./", tasks: 'clean build'
     }
 
     stage ('Gradle Publish') {
