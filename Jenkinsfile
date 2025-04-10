@@ -22,7 +22,7 @@ node {
     }
 
     stage ('Gradle Build') {
-        sh '/var/jenkins_home/tools/hudson.plugins.gradle.GradleInstallation/gradle/bin/gradle clean build --no-daemon --info --init-script /dev/null'
+        sh '/var/jenkins_home/tools/hudson.plugins.gradle.GradleInstallation/gradle/bin/gradle clean build --info --init-script /dev/null'
 
     }
 
